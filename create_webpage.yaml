@@ -1,0 +1,19 @@
+---
+- name:
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: install httpd
+      package:
+        name: httpd
+        state: present
+    - name: create html file
+      copy:
+        content: "I created this with Ansible"
+        dest: /var/www/html/index.html
+    - name: enable httpd service
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+        

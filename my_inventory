@@ -1,0 +1,8 @@
+[dev]
+ec2-34-220-188-200.us-west-2.compute.amazonaws.com
+
+[qa]
+ec2-35-87-31-66.us-west-2.compute.amazonaws.com
+
+[prod]
+ec2-35-94-28-244.us-west-2.compute.amazonaws.com
