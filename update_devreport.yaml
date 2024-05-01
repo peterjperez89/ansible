@@ -1,0 +1,21 @@
+---
+- name: Update permissions, user owner, and group owner of dev-report
+  hosts: dev  
+  become: yes
+  tasks:
+    - name: create 'dev' group
+      group:
+        name: dev
+        state: present
+    - name: create 'dev' user
+      user:
+        name: dev
+        group: dev
+        createhome: yes
+        state: present
+    - name: update permissions for dev-report
+      file:
+        path: "/tmp/dev-report"
+        mode: "0644"
+        owner: dev
+        group: dev
